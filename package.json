@@ -1,0 +1,24 @@
+{
+  "name": "block-posts-rest-api",
+  "version": "1.0.0",
+  "description": "providing APIs for block poster app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paul-kh/block-posts-rest-api.git"
+  },
+  "author": "Paul Chheang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paul-kh/block-posts-rest-api/issues"
+  },
+  "homepage": "https://github.com/paul-kh/block-posts-rest-api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
