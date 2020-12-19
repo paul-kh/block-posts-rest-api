@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/paul-kh/block-posts-rest-api#readme",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.8.0",
+    "mongoose": "^5.11.8",
+    "nodemon": "^2.0.6"
   }
 }
