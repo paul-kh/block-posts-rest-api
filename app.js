@@ -6,6 +6,7 @@ const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 
 const feedRoutes = require("./routes/feed-routes");
+const authRoutes = require("./routes/auth-routes");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/feed", feedRoutes);
+app.use("/auth", authRoutes);
 
 // middleware handling errors
 app.use((error, req, res, next) => {
