@@ -35,11 +35,14 @@ A new post should contain the following field names:
 This endpoint will return 2 posts per page. It supports pagination request as a query string in the URL: GET /feed/posts?page=<pagenumber>.
 
 The responded data is an object with the below data format:
+
+```json
 {
 message: "Fetched posts successfully.",
 posts: <array of post objects>,
 totalItems: <total number of available posts in the database>
 }
+```
 
 Each post object contains the following attributes:
 
@@ -55,6 +58,8 @@ Each post object contains the following attributes:
 ## Get a specific post: GET /feed/post/:postId
 
 This endpoint accepts a query param as ID of a post and return an object with the below data format:
+
+```json
 {
 message: "Post fetched.",
 post: {
@@ -68,6 +73,7 @@ updatedAt: <update_data_of_the_post>
 \_id: <id_of_the_post>
 }
 }
+```
 
 ## Edit a post: PUT /feed/post/:postId
 
@@ -117,6 +123,8 @@ The login form should contain the following fields:
 - password
 
 Upon successful login, a response object will sent with the following data format:
+
+```json
 {
 token: <JSON_Web_Token>,
 user: {
@@ -125,6 +133,7 @@ name: <user_name>,
 email: <user_email>
 }
 }
+```
 
 ## Get user status: GET /auth/status
 
@@ -138,4 +147,6 @@ This endpoint allows updating status of the currently logged-in user. The updati
 
 Upon successful status update, a reponse object will be sent with the below format:
 
-{ message: "User updated." }
+```json
+{ "message": "User updated." }
+```
