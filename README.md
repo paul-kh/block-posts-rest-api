@@ -53,7 +53,7 @@ Each post object contains the following attributes:
 - imageUrl: URL of the post image
 - title: Title of the post
 - updatedAt: Update data of the post
-- \_id: ID of the post
+- _id: ID of the post
 
 ## Get a specific post: GET /feed/post/:postId
 
@@ -70,7 +70,7 @@ This endpoint accepts a query param as ID of a post and return an object with th
         imageUrl: <url_of_the_post_image>
         title: <title_of_the_post>
         updatedAt: <update_data_of_the_post>
-        \_id: <id_of_the_post>
+        _id: <id_of_the_post>
     }
 }
 ```
