@@ -48,29 +48,29 @@ exports.createPost = (req, res, next) => {
   const imageUrl = req.file.path.replace("\\", "/");
   const title = req.body.title;
   const content = req.body.content;
-  // Create post in db
-  const post = new Post({
-    title: title,
-    content: content,
-    imageUrl: imageUrl,
-    creator: req.userId,
-  });
-  post
-    .save()
-    .then((result) => {
-      return User.findById(req.userId);
-    })
+  let foundUser;
+
+  User.findById(req.userId)
     .then((user) => {
-      creator = user;
-      user.posts.push(post); // Mongoose will get the post Id and add it to the array 'posts' of the user object
-      return user.save();
+      foundUser = user;
+      // Create post in db
+      const post = new Post({
+        title: title,
+        content: content,
+        imageUrl: imageUrl,
+        creator: req.userId,
+        creatorName: foundUser.name,
+      });
+      return post.save();
     })
-    .then((result) => {
+    .then((post) => {
+      console.log({ ...post, creator: foundUser.name });
       res.status(201).json({
         message: "Post created successfully!",
         post: post,
-        creator: { _id: creator._id, name: creator.name },
       });
+      foundUser.posts.push(post); // Mongoose will get the post Id and add it to the array 'posts' of the user object
+      return foundUser.save();
     })
     .catch((err) => {
       if (!err.statusCode) {
