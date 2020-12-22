@@ -38,9 +38,9 @@ The responded data is an object with the below data format:
 
 ```json
 {
-message: "Fetched posts successfully.",
-posts: <array of post objects>,
-totalItems: <total number of available posts in the database>
+    message: "Fetched posts successfully.",
+    posts: <array of post objects>,
+    totalItems: <total number of available posts in the database>
 }
 ```
 
@@ -61,17 +61,17 @@ This endpoint accepts a query param as ID of a post and return an object with th
 
 ```json
 {
-message: "Post fetched.",
-post: {
-content: <content_of_the_post>
-createdAt: <creation_data_of_the_post>
-creator: <id_of_the_user_who_created_the_post>
-creatorName: <name_of_the_user_who_created_the_post>
-imageUrl: <url_of_the_post_image>
-title: <title_of_the_post>
-updatedAt: <update_data_of_the_post>
-\_id: <id_of_the_post>
-}
+    message: "Post fetched.",
+    post: {
+        content: <content_of_the_post>
+        createdAt: <creation_data_of_the_post>
+        creator: <id_of_the_user_who_created_the_post>
+        creatorName: <name_of_the_user_who_created_the_post>
+        imageUrl: <url_of_the_post_image>
+        title: <title_of_the_post>
+        updatedAt: <update_data_of_the_post>
+        \_id: <id_of_the_post>
+    }
 }
 ```
 
@@ -126,12 +126,12 @@ Upon successful login, a response object will sent with the following data forma
 
 ```json
 {
-token: <JSON_Web_Token>,
-user: {
-id: <user_id>,
-name: <user_name>,
-email: <user_email>
-}
+    token: <JSON_Web_Token>,
+    user: {
+    id: <user_id>,
+    name: <user_name>,
+    email: <user_email>
+    }
 }
 ```
 
@@ -148,5 +148,7 @@ This endpoint allows updating status of the currently logged-in user. The updati
 Upon successful status update, a reponse object will be sent with the below format:
 
 ```json
-{ "message": "User updated." }
+{
+  "message": "User updated."
+}
 ```
