@@ -84,7 +84,7 @@ A edit form should contain the following field names:
 - image: id of image input that holds image file to be uploaded
 - content: id of a text input / text area that hold the value of the post content
 
-## DELETE /feed/post/:postId
+## Delete a post: DELETE /feed/post/:postId
 
 This endpoint allows deleting a post with a given post ID.
 
