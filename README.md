@@ -80,11 +80,13 @@ A edit form should contain the following field names:
 
 ## DELETE /feed/post/:postId
 
-This endpoint allows deleting a post with a given post ID.
+# This endpoint allows deleting a post with a given post ID.
 
-===================================================================================
+---
 
-The following API endpoints are about user authentication:
+** The following API endpoints are about user authentication: **
+
+---
 
 ## Sign up a new user: PUT /auth/signup
 
