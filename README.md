@@ -97,14 +97,17 @@ Sign up form should contain the following fields:
 - password: must be at least 5 characters
 
 Upon successful signup, a response object will be sent with the following data format:
+
+```json
 {
-message: "User created!",
-user: {
-id: <user_id>,
-name: <user_name>,
-email: <user_email>
+    message: "User created!",
+    user: {
+    id: <user_id>,
+    name: <user_name>,
+    email: <user_email>
+    }
 }
-}
+```
 
 ## Login: POSt /auth/login
 
