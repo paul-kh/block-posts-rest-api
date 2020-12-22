@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
 const User = require("../models/user");
+const user = require("../models/user");
 
 exports.signup = (req, res, next) => {
   const errors = validationResult(req);
@@ -27,7 +28,14 @@ exports.signup = (req, res, next) => {
       return user.save();
     })
     .then((result) => {
-      res.status(201).json({ message: "User created!", userId: result._id });
+      res.status(201).json({
+        message: "User created!",
+        user: {
+          id: result._id,
+          name: result.name,
+          email: result.email,
+        },
+      });
     })
     .catch((err) => {
       if (!err.statusCode) {
@@ -66,7 +74,14 @@ exports.login = (req, res, next) => {
         JWT_SECRET,
         { expiresIn: "1h" }
       );
-      res.status(200).json({ token: token, userId: loadedUser._id.toString() });
+      res.status(200).json({
+        token: token,
+        user: {
+          id: loadedUser._id.toString(),
+          name: loadedUser.name,
+          email: loadedUser.email,
+        },
+      });
     })
     .catch((err) => {
       if (!err.statusCode) {
