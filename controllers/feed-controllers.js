@@ -153,12 +153,17 @@ exports.deletePost = (req, res, next) => {
         error.statusCode = 404;
         throw error;
       }
-      // Check logged in user
       clearImage(post.imageUrl);
       return Post.findByIdAndRemove(postId);
     })
     .then((result) => {
-      // console.log(result);
+      return User.findById(req.userId);
+    })
+    .then((user) => {
+      user.posts.pull(postId); // Mongoose's method to delete an array emlement
+      return user.save();
+    })
+    .then((result) => {
       res.status(200).json({ message: "Deleted post." });
     })
     .catch((err) => {
