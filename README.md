@@ -36,7 +36,7 @@ This endpoint will return 2 posts per page. It supports pagination request as a 
 
 The responded data is an object with the below data format:
 
-```json
+```
 {
     message: "Fetched posts successfully.",
     posts: <array of post objects>,
@@ -59,7 +59,7 @@ Each post object contains the following attributes:
 
 This endpoint accepts a query param as ID of a post and return an object with the below data format:
 
-```json
+```
 {
     message: "Post fetched.",
     post: {
@@ -104,7 +104,7 @@ Sign up form should contain the following fields:
 
 Upon successful signup, a response object will be sent with the following data format:
 
-```json
+```
 {
     message: "User created!",
     user: {
@@ -124,7 +124,7 @@ The login form should contain the following fields:
 
 Upon successful login, a response object will sent with the following data format:
 
-```json
+```
 {
     token: <JSON_Web_Token>,
     user: {
@@ -147,8 +147,8 @@ This endpoint allows updating status of the currently logged-in user. The updati
 
 Upon successful status update, a reponse object will be sent with the below format:
 
-```json
+```
 {
-  "message": "User updated."
+  message: "User updated."
 }
 ```
