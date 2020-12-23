@@ -4,6 +4,7 @@ This RESTful API server provide API endpoints for creating a block poster app wi
 
 - User singup and authentication
 - User authorization for performing some actions, such as editing post, deleting post, and accessing some specific routes.
+- User input validation
 - Post creation with image upload
 - Post listing with pagination
 - Post details
@@ -15,6 +16,7 @@ This RESTful API server provide API endpoints for creating a block poster app wi
 - Server Script: Node.js
 - HTTP request handling: Express.js
 - Authentication: JSON Web Token (jsonwebtoken) | bcryptjs
+- Backend validation for user input: express-validator
 - File upload: multer
 - Database: MongoDB with mongoose as ORD
 
