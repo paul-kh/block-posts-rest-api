@@ -1,6 +1,6 @@
 # Description about the App
 
-This RESTful API server provides API endpoints for creating a block poster app with some fundamental features as follows:
+This RESTful API server provides API endpoints for creating a blog poster app with some fundamental features as follows:
 
 - User singup and authentication
 - User authorization for performing some actions, such as editing post, deleting post, and accessing some specific routes.
